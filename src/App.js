@@ -5,6 +5,7 @@ import styled from "styled-components";
 import "./App.css";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
+import Chat from "./Components/Chat";
 
 function App() {
   return (
@@ -13,11 +14,13 @@ function App() {
         <>
           <Header />
           <AppBody>
-            <Sidebar>
-              <Switch>
-                <Router exact path="/"></Router>
-              </Switch>
-            </Sidebar>
+            <Sidebar />
+
+            <Switch>
+              <Route path="/">
+                <Chat />
+              </Route>
+            </Switch>
           </AppBody>
         </>
       </Router>
