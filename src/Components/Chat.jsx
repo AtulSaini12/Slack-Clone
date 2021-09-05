@@ -32,8 +32,6 @@ const Chat = () => {
   return (
     <ChatContainer>
       {channelDetails ? (
-        <img />
-      ) : (
         <>
           <ChatHeader>
             <ChatHeaderLeft>
@@ -57,6 +55,7 @@ const Chat = () => {
                 <Message
                   key={doc.id}
                   message={message}
+                  timestamp={timestamp}
                   user={user}
                   userImage={userImage}
                 />
@@ -72,6 +71,8 @@ const Chat = () => {
             channelId={channelId}
           />
         </>
+      ) : (
+        <div>select a channel</div>
       )}
     </ChatContainer>
   );

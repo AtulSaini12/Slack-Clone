@@ -27,7 +27,7 @@ const Sidebar = () => {
     <SidebarContainer>
       <SidebarHeader>
         <SidebarInfo>
-          <h2>Slack Clone</h2>
+          <h2>Slack</h2>
           <h3>
             <FiberManualRecord />
             {user.displayName}
@@ -73,12 +73,16 @@ const SidebarContainer = styled.div`
     border: 1px solid #49274b;
     margin-bottom: 10px;
   }
+
+  @media only screen and (max-width: 480px) {
+    flex: 0.7;
+  }
 `;
 
 const SidebarHeader = styled.div`
   display: flex;
   border-bottom: 1px solid #49274b;
-  padding: 13px;
+  padding: 1.09em;
 
   > .MuiSvgIcon-root {
     padding: 8px;
