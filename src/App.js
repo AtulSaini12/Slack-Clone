@@ -8,9 +8,15 @@ import Sidebar from "./Components/Sidebar";
 import Chat from "./Components/Chat";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase";
+import Loading from "./Components/Loading";
+import Login from "./Components/Login";
 
 function App() {
   const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>

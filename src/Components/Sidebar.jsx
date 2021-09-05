@@ -16,10 +16,12 @@ import {
 } from "@material-ui/icons";
 import SidebarOption from "./SidebarOption";
 import { useCollection } from "react-firebase-hooks/firestore";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 const Sidebar = () => {
   const [channels, loading, error] = useCollection(db.collection("channels"));
+  const [user] = useAuthState(auth);
 
   return (
     <SidebarContainer>
@@ -28,7 +30,7 @@ const Sidebar = () => {
           <h2>Slack Clone</h2>
           <h3>
             <FiberManualRecord />
-            Atul Saini
+            {user.displayName}
           </h3>
         </SidebarInfo>
         <Create />
